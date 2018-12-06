@@ -29,11 +29,148 @@
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 60;
 }
 .header h1 {
   margin: 0;
   font-size: 48px;
+}
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  position: fixed;
+  top: 75px;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #81C784;
+  border: 1px solid #004D40;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transform: translateX(-300px);
+  opacity: 0;
+  z-index: 100;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+}
+.menu--open {
+  transition-duration: 1s;
+  transform: translateX(0);
+  animation-name: opacityHandler;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes opacityHandler {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 50;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.show {
+  display: block;
+}
+.articles {
+  margin-top: 95px;
+}
+.article {
+  margin: 20px 10%;
+  padding: 0 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.article-open {
+  height: 400px;
+  transition: 0.3s;
+  margin: 40px 15%;
+  box-shadow: 0px 4px 2px 4px #ccc;
+}
+.article-open p {
+  animation-name: articlepop;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+@keyframes articlepop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.closeBtn {
+  width: 35px;
+  height: 30px;
+  background-color: darkred;
+  position: absolute;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  top: 5px;
+  right: 10px;
+}
+.form {
+  margin: 40px 10%;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+.form h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.btn {
+  margin-top: 20px;
 }
 html,
 body {

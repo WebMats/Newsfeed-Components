@@ -5,7 +5,6 @@
 }
 
 .menu {
-  display: none;
   position: fixed;
   top: 75px;
   left: 0;
@@ -16,6 +15,9 @@
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  transform: translateX(-300px);
+  opacity: 0;
+  z-index: 100;
 }
 
 .menu ul li{
@@ -26,5 +28,31 @@
 }
 
 .menu--open {
+  transition-duration: 1s;
+  transform: translateX(0);
+  animation-name: opacityHandler;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opacityHandler {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 50;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.show {
   display: block;
 }

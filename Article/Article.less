@@ -43,8 +43,49 @@
 
 .article-open {
   height: 400px;
+  transition: .3s;
+  margin: 40px 15%;
+  box-shadow:         0px 4px 2px 4px #ccc;
+}
+.article-open p {
+  animation-name: articlepop;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes articlepop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+.closeBtn {
+  width: 35px;
+  height: 30px;
+  background-color: darkred;
+  position: absolute;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  top: 5px;
+  right: 10px;
+}
+
+.form {
+  margin: 40px 10%;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+.form h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.btn {
+  margin-top: 20px;
+}
 
 
