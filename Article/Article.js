@@ -45,7 +45,6 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit' , (e) => {
   e.preventDefault();
-  console.log(e.target.title.value)
   let wrappingDiv = document.createElement('div')
   wrappingDiv.classList.add('article');
   let headerTwo = document.createElement('h2');
@@ -61,7 +60,7 @@ form.addEventListener('submit' , (e) => {
   button.type = "button";
   span.classList.add('expandButton');
   headerTwo.textContent = e.target.title.value;
-  paragraph.textContent = e.target.title.value;
+  paragraph.textContent = e.target.content.value;
   wrappingDiv.appendChild(headerTwo);
   wrappingDiv.appendChild(dateParagraph)
   wrappingDiv.appendChild(paragraph);
